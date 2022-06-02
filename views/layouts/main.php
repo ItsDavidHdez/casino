@@ -38,26 +38,12 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav'],
         'items' => [
             ['label' => 'Inicio', 'url' => ['/site/index']],
-            ['label' => 'Usuarios', 'url' => ['/site/users']],
-            ['label' => 'Personal', 'url' => ['/site/personal']],
-            ['label' => 'Catálogos', 'url' => ['/site/catalogs']],
+            ['label' => 'Platillos', 'items' => [
+                ['label' => 'Agregar Platillos', 'url' => ['/site/cymbals']],
+                ['label' => 'Seguimiento de Platillos', 'url' => ['/site/cymbals-table']],
+            ]],
             ['label' => 'Materia Prima', 'url' => ['/site/mp']],
-            ['label' => 'Levantar Pedido', 'url' => ['/site/add-order']],
-            ['label' => 'Seguimiento de Pedidos', 'url' => ['/site/tracking-order']],
-            ['label' => 'Compras', 'url' => ['/site/shopping']],
-            ['label' => 'Platillos', 'url' => ['/site/cymbals']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
-            )
+            ['label' => 'Inventario', 'url' => ['/site/inventory']],
         ],
     ]);
     NavBar::end();

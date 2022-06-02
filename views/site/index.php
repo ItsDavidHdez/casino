@@ -2,6 +2,7 @@
 
 /** @var yii\web\View $this */
 
+
 $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
@@ -17,13 +18,25 @@ $this->title = 'My Yii Application';
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img class="d-block w-100" src="https://lh3.googleusercontent.com/p/AF1QipO2FVpYyuIjS-lhztNlFDuG_qeUvCZOkWheV2RY=s0" alt="First slide">
+                    <img class="d-block w-100" src="<?= Yii::$app->request->baseUrl?>/images/Banner1.jpg" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="https://lh3.googleusercontent.com/p/AF1QipMPvr8ANKvu_W_SZEpkKGabnZQgR05cZ0egf4xI=s0" alt="Second slide">
+                    <img class="d-block w-100" src="<?= Yii::$app->request->baseUrl?>/images/Banner2.jpg" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="https://lh3.googleusercontent.com/p/AF1QipM7iSuzH8GmReBdnq4vEfPMceJNiZoUrJsKoG-7=s0" alt="Third slide">
+                    <img class="d-block w-100" src="<?= Yii::$app->request->baseUrl?>/images/Banner3.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="<?= Yii::$app->request->baseUrl?>/images/Banner4.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="<?= Yii::$app->request->baseUrl?>/images/Banner5.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="<?= Yii::$app->request->baseUrl?>/images/Banner6.jpg" alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="<?= Yii::$app->request->baseUrl?>/images/Banner7.jpg" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
