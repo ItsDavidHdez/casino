@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "ingredientes_platillo".
+ * This is the model class for table "ingredientesplatillo".
  *
  * @property int $id_ingrdte_platillo
  * @property string $id_mp
@@ -14,18 +14,18 @@ use Yii;
  * @property float $costo_total_ingrdte
  * @property string $id_unid_med_ing
  *
- * @property MateriaPrima $mp
+ * @property Materiaprima $mp
  * @property Platillos $platillo
- * @property UnidadesMedIng $unidMedIng
+ * @property Unidadesmeding $unidMedIng
  */
-class IngredientesPlatillo extends \yii\db\ActiveRecord
+class Ingredientesplatillo extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'ingredientes_platillo';
+        return 'ingredientesplatillo';
     }
 
     /**
@@ -38,9 +38,9 @@ class IngredientesPlatillo extends \yii\db\ActiveRecord
             [['cantidad_ingrdte', 'costo_total_ingrdte'], 'number'],
             [['id_mp', 'id_unid_med_ing'], 'string', 'max' => 5],
             [['id_platillo'], 'string', 'max' => 8],
-            [['id_unid_med_ing'], 'exist', 'skipOnError' => true, 'targetClass' => UnidadesMedIng::className(), 'targetAttribute' => ['id_unid_med_ing' => 'id_unid_med_ing']],
+            [['id_unid_med_ing'], 'exist', 'skipOnError' => true, 'targetClass' => Unidadesmeding::className(), 'targetAttribute' => ['id_unid_med_ing' => 'id_unid_med_ing']],
             [['id_platillo'], 'exist', 'skipOnError' => true, 'targetClass' => Platillos::className(), 'targetAttribute' => ['id_platillo' => 'id_platillo']],
-            [['id_mp'], 'exist', 'skipOnError' => true, 'targetClass' => MateriaPrima::className(), 'targetAttribute' => ['id_mp' => 'id_mp']],
+            [['id_mp'], 'exist', 'skipOnError' => true, 'targetClass' => Materiaprima::className(), 'targetAttribute' => ['id_mp' => 'id_mp']],
         ];
     }
 
@@ -66,7 +66,7 @@ class IngredientesPlatillo extends \yii\db\ActiveRecord
      */
     public function getMp()
     {
-        return $this->hasOne(MateriaPrima::className(), ['id_mp' => 'id_mp']);
+        return $this->hasOne(Materiaprima::className(), ['id_mp' => 'id_mp']);
     }
 
     /**
@@ -86,6 +86,6 @@ class IngredientesPlatillo extends \yii\db\ActiveRecord
      */
     public function getUnidMedIng()
     {
-        return $this->hasOne(UnidadesMedIng::className(), ['id_unid_med_ing' => 'id_unid_med_ing']);
+        return $this->hasOne(Unidadesmeding::className(), ['id_unid_med_ing' => 'id_unid_med_ing']);
     }
 }

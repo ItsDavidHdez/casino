@@ -14,7 +14,7 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>" class="h-100">
+<html lang="<?= Yii::$app->language = 'es-ES' ?>" class="h-100">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -39,11 +39,18 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Inicio', 'url' => ['/site/index']],
             ['label' => 'Platillos', 'items' => [
-                ['label' => 'Agregar Platillos', 'url' => ['/site/cymbals']],
-                ['label' => 'Seguimiento de Platillos', 'url' => ['/site/cymbals-table']],
+                ['label' => 'Agregar Platillos', 'url' => ['platillos/create']],
+                ['label' => 'Seguimiento de Platillos', 'url' => ['platillos/index']],
             ]],
-            ['label' => 'Materia Prima', 'url' => ['/site/mp']],
-            ['label' => 'Inventario', 'url' => ['/site/inventory']],
+            ['label' => 'Materia Prima', 'items' => [
+                ['label' => 'Inventario materia prima', 'url' => ['inventariomp/index']],
+                ['label' => 'Clasificación materia prima', 'url' => ['clasificacionmateriaprima/index']],
+            ]],
+            ['label' => 'Clasificación de Platillos', 'url' => ['clasificacionplatillos/index']],
+            ['label' => 'Unidades de Medida', 'items' => [
+                ['label' => 'Unidades de Medida', 'url' => ['unidadesmedida/index']],
+                ['label' => 'Unidades de Medida Ingredientes', 'url' => ['unidadesmeding/index']],
+            ]],
         ],
     ]);
     NavBar::end();

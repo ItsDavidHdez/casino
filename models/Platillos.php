@@ -13,11 +13,12 @@ use Yii;
  * @property float|null $costo_produccion
  * @property int $precio_venta
  * @property string $id_clasifplatilo
+ * @property string|null $image
  *
- * @property ClasificacionPlatillo $clasifplatilo
- * @property IngredientesPlatillo[] $ingredientesPlatillos
+ * @property Clasificacionplatillos $clasifplatilo
+ * @property Ingredientesplatillo[] $ingredientesplatillos
  */
-class Platillo extends \yii\db\ActiveRecord
+class Platillos extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -40,8 +41,9 @@ class Platillo extends \yii\db\ActiveRecord
             [['nombre_platillo'], 'string', 'max' => 60],
             [['descripcion'], 'string', 'max' => 200],
             [['id_clasifplatilo'], 'string', 'max' => 5],
+            [['image'], 'string', 'max' => 50],
             [['id_platillo'], 'unique'],
-            [['id_clasifplatilo'], 'exist', 'skipOnError' => true, 'targetClass' => ClasificacionPlatillo::className(), 'targetAttribute' => ['id_clasifplatilo' => 'id_clasifplatillo']],
+            [['id_clasifplatilo'], 'exist', 'skipOnError' => true, 'targetClass' => Clasificacionplatillos::className(), 'targetAttribute' => ['id_clasifplatilo' => 'id_clasifplatillo']],
         ];
     }
 
@@ -51,12 +53,13 @@ class Platillo extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_platillo' => 'Id Platillo',
-            'nombre_platillo' => 'Nombre Platillo',
-            'descripcion' => 'Descripcion',
-            'costo_produccion' => 'Costo Produccion',
+            'id_platillo' => 'ID',
+            'nombre_platillo' => 'Nombre',
+            'descripcion' => 'Descripción',
+            'costo_produccion' => 'Costo Producción',
             'precio_venta' => 'Precio Venta',
-            'id_clasifplatilo' => 'Id Clasifplatilo',
+            'id_clasifplatilo' => 'Clasificación',
+            'image' => 'Imagen',
         ];
     }
 
@@ -67,16 +70,16 @@ class Platillo extends \yii\db\ActiveRecord
      */
     public function getClasifplatilo()
     {
-        return $this->hasOne(ClasificacionPlatillo::className(), ['id_clasifplatillo' => 'id_clasifplatilo']);
+        return $this->hasOne(Clasificacionplatillos::className(), ['id_clasifplatillo' => 'id_clasifplatilo']);
     }
 
     /**
-     * Gets query for [[IngredientesPlatillos]].
+     * Gets query for [[Ingredientesplatillos]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getIngredientesPlatillos()
+    public function getIngredientesplatillos()
     {
-        return $this->hasMany(IngredientesPlatillo::className(), ['id_platillo' => 'id_platillo']);
+        return $this->hasMany(Ingredientesplatillo::className(), ['id_platillo' => 'id_platillo']);
     }
 }

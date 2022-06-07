@@ -5,21 +5,21 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "clasificacion_platillos".
+ * This is the model class for table "clasificacionplatillos".
  *
  * @property string $id_clasifplatillo
  * @property string $nombre_clasif
  *
  * @property Platillos[] $platillos
  */
-class ClasificacionPlatillo extends \yii\db\ActiveRecord
+class Clasificacionplatillos extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'clasificacion_platillos';
+        return 'clasificacionplatillos';
     }
 
     /**
@@ -41,8 +41,8 @@ class ClasificacionPlatillo extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_clasifplatillo' => 'Id Clasifplatillo',
-            'nombre_clasif' => 'Nombre Clasif',
+            'id_clasifplatillo' => 'ID',
+            'nombre_clasif' => 'Nombre',
         ];
     }
 

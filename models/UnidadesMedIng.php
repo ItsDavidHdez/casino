@@ -5,21 +5,21 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "unidades_med_ing".
+ * This is the model class for table "unidadesmeding".
  *
  * @property string $id_unid_med_ing
  * @property string $nombre_unid_meding
  *
- * @property IngredientesPlatillo[] $ingredientesPlatillos
+ * @property Ingredientesplatillo[] $ingredientesplatillos
  */
-class UnidadesMedIng extends \yii\db\ActiveRecord
+class Unidadesmeding extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'unidades_med_ing';
+        return 'unidadesmeding';
     }
 
     /**
@@ -41,18 +41,18 @@ class UnidadesMedIng extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_unid_med_ing' => 'Id Unid Med Ing',
-            'nombre_unid_meding' => 'Nombre Unid Meding',
+            'id_unid_med_ing' => 'ID',
+            'nombre_unid_meding' => 'Nombre',
         ];
     }
 
     /**
-     * Gets query for [[IngredientesPlatillos]].
+     * Gets query for [[Ingredientesplatillos]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getIngredientesPlatillos()
+    public function getIngredientesplatillos()
     {
-        return $this->hasMany(IngredientesPlatillo::className(), ['id_unid_med_ing' => 'id_unid_med_ing']);
+        return $this->hasMany(Ingredientesplatillo::className(), ['id_unid_med_ing' => 'id_unid_med_ing']);
     }
 }

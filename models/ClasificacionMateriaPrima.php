@@ -5,22 +5,22 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "clasificacion_meteria_prima".
+ * This is the model class for table "clasificacionmateriaprima".
  *
  * @property string $id_clasificacion
  * @property string $nombre_clasificacion
  * @property string $descripcion
  *
- * @property MateriaPrima[] $materiaPrimas
+ * @property Materiaprima[] $materiaprimas
  */
-class ClasificacionMateriaPrima extends \yii\db\ActiveRecord
+class Clasificacionmateriaprima extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'clasificacion_meteria_prima';
+        return 'clasificacionmateriaprima';
     }
 
     /**
@@ -49,12 +49,12 @@ class ClasificacionMateriaPrima extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[MateriaPrimas]].
+     * Gets query for [[Materiaprimas]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getMateriaPrimas()
+    public function getMateriaprimas()
     {
-        return $this->hasMany(MateriaPrima::className(), ['id_clasificacion' => 'id_clasificacion']);
+        return $this->hasMany(Materiaprima::className(), ['id_clasificacion' => 'id_clasificacion']);
     }
 }

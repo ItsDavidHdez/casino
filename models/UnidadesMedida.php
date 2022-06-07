@@ -5,23 +5,23 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "unidades_medida".
+ * This is the model class for table "unidadesmedida".
  *
  * @property string $id_uni_medida
  * @property string $nombre_uni_medida
  * @property string $abreviatura
  * @property string $descripcion
  *
- * @property MateriaPrima[] $materiaPrimas
+ * @property Materiaprima[] $materiaprimas
  */
-class UnidadesMedida extends \yii\db\ActiveRecord
+class Unidadesmedida extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'unidades_medida';
+        return 'unidadesmedida';
     }
 
     /**
@@ -53,12 +53,12 @@ class UnidadesMedida extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[MateriaPrimas]].
+     * Gets query for [[Materiaprimas]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getMateriaPrimas()
+    public function getMateriaprimas()
     {
-        return $this->hasMany(MateriaPrima::className(), ['id_uni_medida' => 'id_uni_medida']);
+        return $this->hasMany(Materiaprima::className(), ['id_uni_medida' => 'id_uni_medida']);
     }
 }

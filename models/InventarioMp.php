@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "inventario_mp".
+ * This is the model class for table "inventariomp".
  *
  * @property int $id_in
  * @property string $id_mp
@@ -14,16 +14,16 @@ use Yii;
  * @property int $costo_uni_medida
  * @property float $costo_uni_medida_min
  *
- * @property MateriaPrima $mp
+ * @property Materiaprima $mp
  */
-class InventarioMp extends \yii\db\ActiveRecord
+class Inventariomp extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'inventario_mp';
+        return 'inventariomp';
     }
 
     /**
@@ -36,7 +36,7 @@ class InventarioMp extends \yii\db\ActiveRecord
             [['existencia', 'costo_uni_medida_min'], 'number'],
             [['stock', 'costo_uni_medida'], 'integer'],
             [['id_mp'], 'string', 'max' => 5],
-            [['id_mp'], 'exist', 'skipOnError' => true, 'targetClass' => MateriaPrima::className(), 'targetAttribute' => ['id_mp' => 'id_mp']],
+            [['id_mp'], 'exist', 'skipOnError' => true, 'targetClass' => Materiaprima::className(), 'targetAttribute' => ['id_mp' => 'id_mp']],
         ];
     }
 
@@ -62,6 +62,6 @@ class InventarioMp extends \yii\db\ActiveRecord
      */
     public function getMp()
     {
-        return $this->hasOne(MateriaPrima::className(), ['id_mp' => 'id_mp']);
+        return $this->hasOne(Materiaprima::className(), ['id_mp' => 'id_mp']);
     }
 }
