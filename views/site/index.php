@@ -9,7 +9,7 @@ $this->title = 'Casino';
 
     <div class="jumbotron text-center bg-transparent">
         <h1 class="display-4">Club Petrolero Cerro Azul</h1>
-        <p class="lead">Sistema Integral Club Petrolero</p>
+        <h2 class="lead" style="font-size: 28px;">Sistema Integral Club Petrolero</h2>
     </div>
 
     <div class="body-content">
