@@ -2,10 +2,14 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use app\models\Clasificacionplatillos;
+use yii\helpers\ArrayHelper;
+use app\models\Ingredientesplatillo;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Platillos */
 /* @var $form yii\widgets\ActiveForm */
+
 ?>
 
 <div class="platillos-form">
@@ -22,9 +26,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'precio_venta')->textInput() ?>
 
-    <?= $form->field($model, 'id_clasifplatilo')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
+    <?=
+        $form->field($model, 'id_clasifplatilo')
+        ->dropDownList(
+            ArrayHelper::map(Clasificacionplatillos::find()->all(), 'id_clasifplatilo', 'nombre_clasif'),
+            ['prompt' => 'Selecciona una opción...']
+        )
+    ?>
 
     <div class="form-group">
         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
