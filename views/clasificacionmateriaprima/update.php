@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Clasificacionmateriaprima */
 
 $this->title = 'Update Clasificacionmateriaprima: ' . $model->id_clasificacion;
-$this->params['breadcrumbs'][] = ['label' => 'Clasificacionmateriaprimas', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Clasificación de materia prima', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_clasificacion, 'url' => ['view', 'id_clasificacion' => $model->id_clasificacion]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

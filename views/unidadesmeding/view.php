@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Unidadesmeding */
 
-$this->title = $model->id_unid_med_ing;
-$this->params['breadcrumbs'][] = ['label' => 'Unidadesmedings', 'url' => ['index']];
+$this->title = $model->nombre_unid_meding;
+$this->params['breadcrumbs'][] = ['label' => 'Unidades de medida de ingredientes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>

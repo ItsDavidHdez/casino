@@ -50,12 +50,12 @@ class Ingredientesplatillo extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_ingrdte_platillo' => 'Id Ingrdte Platillo',
-            'id_mp' => 'Id Mp',
-            'id_platillo' => 'Id Platillo',
-            'cantidad_ingrdte' => 'Cantidad Ingrdte',
-            'costo_total_ingrdte' => 'Costo Total Ingrdte',
-            'id_unid_med_ing' => 'Id Unid Med Ing',
+            'id_ingrdte_platillo' => 'Identificador',
+            'id_mp' => 'Materia prima',
+            'id_platillo' => 'Platillo',
+            'cantidad_ingrdte' => 'Cantidad',
+            'costo_total_ingrdte' => 'Costo Total',
+            'id_unid_med_ing' => 'Unidad de Medida',
         ];
     }
 

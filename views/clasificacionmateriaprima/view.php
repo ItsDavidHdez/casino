@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Clasificacionmateriaprima */
 
-$this->title = $model->id_clasificacion;
-$this->params['breadcrumbs'][] = ['label' => 'Clasificacionmateriaprimas', 'url' => ['index']];
+$this->title = $model->nombre_clasificacion;
+$this->params['breadcrumbs'][] = ['label' => 'Clasificacion de materia prima', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>

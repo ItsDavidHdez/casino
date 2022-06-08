@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Clasificacionmateriaprima */
 
-$this->title = 'Create Clasificacionmateriaprima';
-$this->params['breadcrumbs'][] = ['label' => 'Clasificacionmateriaprimas', 'url' => ['index']];
+$this->title = 'Crear clasificación';
+$this->params['breadcrumbs'][] = ['label' => 'Clasificación de materia prima', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="clasificacionmateriaprima-create">

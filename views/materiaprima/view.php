@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Materiaprima */
 
-$this->title = $model->id_mp;
-$this->params['breadcrumbs'][] = ['label' => 'Materiaprimas', 'url' => ['index']];
+$this->title = $model->nombre_mp;
+$this->params['breadcrumbs'][] = ['label' => 'Materia prima', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>

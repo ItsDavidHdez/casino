@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Clasificacionplatillos */
 
-$this->title = $model->id_clasifplatillo;
+$this->title = $model->nombre_clasif;
 $this->params['breadcrumbs'][] = ['label' => 'Clasificación de platillos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);

@@ -20,6 +20,7 @@ use Yii;
  */
 class Platillos extends \yii\db\ActiveRecord
 {
+    public $image;
     /**
      * {@inheritdoc}
      */
@@ -41,7 +42,7 @@ class Platillos extends \yii\db\ActiveRecord
             [['nombre_platillo'], 'string', 'max' => 60],
             [['descripcion'], 'string', 'max' => 200],
             [['id_clasifplatilo'], 'string', 'max' => 5],
-            [['image'], 'string', 'max' => 50],
+            [['image'], 'file', 'extensions' => 'jpg,png,jpeg'],
             [['id_platillo'], 'unique'],
             [['id_clasifplatilo'], 'exist', 'skipOnError' => true, 'targetClass' => Clasificacionplatillos::className(), 'targetAttribute' => ['id_clasifplatilo' => 'id_clasifplatillo']],
         ];

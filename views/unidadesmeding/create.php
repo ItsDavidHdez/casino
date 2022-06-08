@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Unidadesmeding */
 
 $this->title = 'Crear unidad de medida de ingredientes';
-$this->params['breadcrumbs'][] = ['label' => 'Unidadesmedings', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Unidades de medida de ingredientes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="unidadesmeding-create">

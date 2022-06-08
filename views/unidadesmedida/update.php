@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Unidadesmedida */
 
 $this->title = 'Update Unidadesmedida: ' . $model->id_uni_medida;
-$this->params['breadcrumbs'][] = ['label' => 'Unidadesmedidas', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Unidades de Medida', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_uni_medida, 'url' => ['view', 'id_uni_medida' => $model->id_uni_medida]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

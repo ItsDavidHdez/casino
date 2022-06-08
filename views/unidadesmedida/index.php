@@ -10,7 +10,7 @@ use app\models\Unidadesmedida;
 /* @var $searchModel app\models\UnidadesmedidaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Unidadesmedidas';
+$this->title = 'Unidades de Medida';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="unidadesmedida-index">
@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Unidadesmedida', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Agregar', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

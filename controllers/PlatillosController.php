@@ -7,6 +7,7 @@ use app\models\PlatillosSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * PlatillosController implements the CRUD actions for Platillos model.
@@ -77,6 +78,8 @@ class PlatillosController extends Controller
             $model->loadDefaultValues();
         }
 
+        // $this->uploadImage($model);
+
         return $this->render('create', [
             'model' => $model,
         ]);
@@ -131,4 +134,16 @@ class PlatillosController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    // protected function uploadImage(Platillos $model) {
+    //     if ($model->load($this->request->post())) {
+            
+    //         $model->image = UploadedFile::getInstance($model, 'image');
+    //         $routeFile = 'uploads/'.time()."_".$model->image->name.".".$model->image->extension;
+    //         $model->image->saveAs($routeFile);
+
+    //         $model->save(false);
+    //         return $this->redirect(['view', 'id_platillo' => $model->id_platillo]);
+    //     }
+    // }
 }

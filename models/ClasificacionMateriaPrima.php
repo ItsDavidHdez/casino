@@ -42,9 +42,9 @@ class Clasificacionmateriaprima extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_clasificacion' => 'Id Clasificacion',
-            'nombre_clasificacion' => 'Nombre Clasificacion',
-            'descripcion' => 'Descripcion',
+            'id_clasificacion' => 'ID Clasificación',
+            'nombre_clasificacion' => 'Nombre Clasificación',
+            'descripcion' => 'Descripción',
         ];
     }
 

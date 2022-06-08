@@ -4,12 +4,13 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use app\models\clasificacionmateriaprima;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ClasificacionmateriamrimaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Clasificacionmateriaprimas';
+$this->title = 'Clasificación de Materia Prima';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="clasificacionmateriaprima-index">
@@ -17,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Agregar una clasificación', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Agregar', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -33,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'descripcion',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Clasificacionmateriaprima $model, $key, $index, $column) {
+                'urlCreator' => function ($action, clasificacionmateriaprima $model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id_clasificacion' => $model->id_clasificacion]);
                  }
             ],

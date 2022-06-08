@@ -51,11 +51,11 @@ class Materiaprima extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_mp' => 'Id Mp',
-            'nombre_mp' => 'Nombre Mp',
-            'id_uni_medida' => 'Id Uni Medida',
-            'id_clasificacion' => 'Id Clasificacion',
-            'descripcion' => 'Descripcion',
+            'id_mp' => 'ID Materia Prima',
+            'nombre_mp' => 'Nombre',
+            'id_uni_medida' => 'Unidad de Medida',
+            'id_clasificacion' => 'Clasificación',
+            'descripcion' => 'Descripción',
         ];
     }
 

@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Inventariomp */
 
-$this->title = 'Create Inventariomp';
+$this->title = 'Agregar Inventario';
 $this->params['breadcrumbs'][] = ['label' => 'Inventariomps', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

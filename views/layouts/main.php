@@ -39,14 +39,15 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Inicio', 'url' => ['/site/index']],
             ['label' => 'Platillos', 'items' => [
-                ['label' => 'Agregar Platillos', 'url' => ['platillos/create']],
                 ['label' => 'Seguimiento de Platillos', 'url' => ['platillos/index']],
+                ['label' => 'Clasificación de Platillos', 'url' => ['clasificacionplatillos/index']],
+                ['label' => 'Ingredientes', 'url' => ['ingredientesplatillo/index']],
             ]],
             ['label' => 'Materia Prima', 'items' => [
+                ['label' => 'Materia prima', 'url' => ['materiaprima/index']],
                 ['label' => 'Inventario materia prima', 'url' => ['inventariomp/index']],
                 ['label' => 'Clasificación materia prima', 'url' => ['clasificacionmateriaprima/index']],
             ]],
-            ['label' => 'Clasificación de Platillos', 'url' => ['clasificacionplatillos/index']],
             ['label' => 'Unidades de Medida', 'items' => [
                 ['label' => 'Unidades de Medida', 'url' => ['unidadesmedida/index']],
                 ['label' => 'Unidades de Medida Ingredientes', 'url' => ['unidadesmeding/index']],

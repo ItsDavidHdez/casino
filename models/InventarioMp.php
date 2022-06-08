@@ -46,12 +46,12 @@ class Inventariomp extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_in' => 'Id In',
-            'id_mp' => 'Id Mp',
+            'id_in' => 'Identificador Inventario',
+            'id_mp' => 'Identificador Materia Prima',
             'existencia' => 'Existencia',
             'stock' => 'Stock',
-            'costo_uni_medida' => 'Costo Uni Medida',
-            'costo_uni_medida_min' => 'Costo Uni Medida Min',
+            'costo_uni_medida' => 'Costo Unidad de Medida',
+            'costo_uni_medida_min' => 'Costo Unidad de Medida Min',
         ];
     }
 

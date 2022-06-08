@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\Materiaprima;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Inventariomp */
@@ -12,7 +14,17 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_mp')->textInput(['maxlength' => true]) ?>
+    <?php
+        $identificador = Materiaprima::find()->all();
+        echo $form->field($model, 'id_mp')
+        ->dropDownList(
+            ArrayHelper::map($identificador,'id_mp', function($identificador){
+                return $identificador->id_mp;
+            }) ,
+            ['prompt'=>'Selecciona una opción ...']
+
+        );
+    ?>
 
     <?= $form->field($model, 'existencia')->textInput() ?>
 
