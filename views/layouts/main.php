@@ -28,10 +28,11 @@ AppAsset::register($this);
 <header>
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => Html::img('@web/images/logo.jpeg', ['alt'=>Yii::$app->name, 'style' => 'width: 50px; margin-right: 10px;']),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
+            'style' => 'max-height: 65px;'        
         ],
     ]);
     echo Nav::widget([

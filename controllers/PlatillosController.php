@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use app\models\Ingredientesplatillo;
 
 /**
  * PlatillosController implements the CRUD actions for Platillos model.
@@ -69,6 +70,7 @@ class PlatillosController extends Controller
     public function actionCreate()
     {
         $model = new Platillos();
+        $modelIng = new Ingredientesplatillo();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -82,6 +84,7 @@ class PlatillosController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'modelIng' => $modelIng,
         ]);
     }
 
@@ -94,6 +97,8 @@ class PlatillosController extends Controller
      */
     public function actionUpdate($id_platillo)
     {
+        $modelIng = new Ingredientesplatillo();
+ 
         $model = $this->findModel($id_platillo);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
@@ -102,6 +107,7 @@ class PlatillosController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'modelIng' => $modelIng,
         ]);
     }
 

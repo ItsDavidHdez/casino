@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Ingredientesplatillo */
 
 $this->title = 'Agregar';
-$this->params['breadcrumbs'][] = ['label' => 'Ingredientesplatillos', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Ingredientes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ingredientesplatillo-create">
