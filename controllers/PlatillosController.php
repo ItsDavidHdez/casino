@@ -9,6 +9,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use app\models\Ingredientesplatillo;
+use app\models\IngredientesplatilloSearch;
 
 /**
  * PlatillosController implements the CRUD actions for Platillos model.
@@ -57,8 +58,14 @@ class PlatillosController extends Controller
      */
     public function actionView($id_platillo)
     {
+        $searchModelIng = new IngredientesplatilloSearch();
+        $dataProviderIng = $searchModelIng->search($this->request->queryParams);
+        $dataProviderIng->query->where(['id_platillo' => $id_platillo]);
+
         return $this->render('view', [
             'model' => $this->findModel($id_platillo),
+            'searchModelIng' => $searchModelIng,
+            'dataProviderIng' => $dataProviderIng,
         ]);
     }
 
@@ -138,7 +145,7 @@ class PlatillosController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException('Esta página no existe :(.');
     }
 
     // protected function uploadImage(Platillos $model) {
