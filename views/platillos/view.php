@@ -14,6 +14,9 @@ $this->title = $model->nombre_platillo;
 $this->params['breadcrumbs'][] = ['label' => 'Platillos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
+
+$modelIng = new Ingredientesplatillo();
+
 ?>
 <div class="platillos-view">
 
@@ -24,10 +27,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Borrar', ['delete', 'id_platillo' => $model->id_platillo], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => '¿Estás seguro de eliminar este platillo?',
                 'method' => 'post',
             ],
         ]) ?>
+        <?= Html::a('Agregar ingrediente', ['ingredientesplatillo/create', 'id_ingrdte_platillo' => $modelIng->id_ingrdte_platillo], ['class' => 'btn btn-warning']) ?>
     </p>
 
     <?= DetailView::widget([
