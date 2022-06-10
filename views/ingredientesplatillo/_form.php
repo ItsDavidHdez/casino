@@ -21,7 +21,7 @@ use app\models\Materiaprima;
         echo $form->field($model, 'id_mp')
         ->dropDownList(
             ArrayHelper::map($idMateriaPrima, 'id_mp', function($idMateriaPrima) {
-                return $idMateriaPrima->id_mp.' / '.$idMateriaPrima->nombre_mp;
+                return $idMateriaPrima->id_mp.' / '.$idMateriaPrima->nombre_mp.' / '.$idMateriaPrima->uniMedida->nombre_uni_medida;
             }),
             ['prompt'=>'Selecciona un platillo...']
         )
@@ -40,8 +40,6 @@ use app\models\Materiaprima;
 
     <?= $form->field($model, 'cantidad_ingrdte')->textInput() ?>
 
-    <?= $form->field($model, 'costo_total_ingrdte')->textInput() ?>
-
     <?php
         $idUniMed = Unidadesmeding::find()->all();
         echo $form->field($model, 'id_unid_med_ing')
@@ -52,6 +50,8 @@ use app\models\Materiaprima;
             ['prompt'=>'Selecciona una unidad de medida...']
         );
     ?>
+
+    <?= $form->field($model, 'costo_total_ingrdte')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>

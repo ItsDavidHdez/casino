@@ -54,7 +54,7 @@ class Ingredientesplatillo extends \yii\db\ActiveRecord
             'id_mp' => 'Materia prima',
             'id_platillo' => 'Platillo',
             'cantidad_ingrdte' => 'Cantidad',
-            'costo_total_ingrdte' => 'Costo Total',
+            'costo_total_ingrdte' => 'Costo por Unidad',
             'id_unid_med_ing' => 'Unidad de Medida',
         ];
     }

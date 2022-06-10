@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+
 /**
  * IngredientesplatilloController implements the CRUD actions for Ingredientesplatillo model.
  */
@@ -71,7 +72,7 @@ class IngredientesplatilloController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id_ingrdte_platillo' => $model->id_ingrdte_platillo]);
+                return $this->redirect(['platillos/view', 'id_platillo' => $model->id_platillo]);
             }
         } else {
             $model->loadDefaultValues();
