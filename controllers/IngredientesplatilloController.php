@@ -7,7 +7,8 @@ use app\models\IngredientesplatilloSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use app\models\Platillos;
+use app\models\PlatillosSearch;
 
 /**
  * IngredientesplatilloController implements the CRUD actions for Ingredientesplatillo model.
@@ -40,6 +41,7 @@ class IngredientesplatilloController extends Controller
     public function actionIndex()
     {
         $searchModel = new IngredientesplatilloSearch();
+
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -72,6 +74,9 @@ class IngredientesplatilloController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
+                $modelPlatillo = Platillos::find()->where(['id_platillo'=>$model->id_platillo])->one();
+                $modelPlatillo->costo_produccion = $this->calculatorCostProd($model->id_platillo);
+                $modelPlatillo->save();
                 return $this->redirect(['platillos/view', 'id_platillo' => $model->id_platillo]);
             }
         } else {
@@ -94,13 +99,18 @@ class IngredientesplatilloController extends Controller
     {
         $model = $this->findModel($id_ingrdte_platillo);
 
+        $modelPlatillo = Platillos::find()->where(['id_platillo'=>$model->id_platillo])->one();
+
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id_ingrdte_platillo' => $model->id_ingrdte_platillo]);
+            $modelPlatillo->costo_produccion = $this->calculatorCostProd($model->id_platillo);
+            $modelPlatillo->save();
+            return $this->redirect(['platillos/view', 'id_platillo' => $model->id_platillo]);
         }
 
         return $this->render('update', [
             'model' => $model,
         ]);
+        
     }
 
     /**
@@ -112,9 +122,14 @@ class IngredientesplatilloController extends Controller
      */
     public function actionDelete($id_ingrdte_platillo)
     {
+        $model = Ingredientesplatillo::find()->where(['id_ingrdte_platillo'=>$id_ingrdte_platillo])->one();
+        $modelPlatillo = Platillos::find()->where(['id_platillo'=>$model->id_platillo])->one();
+
         $this->findModel($id_ingrdte_platillo)->delete();
 
-        return $this->redirect(['index']);
+        $modelPlatillo->costo_produccion = $this->calculatorCostProd($modelPlatillo->id_platillo);
+        $modelPlatillo->save();
+        return $this->redirect(['platillos/view', 'id_platillo' => $modelPlatillo->id_platillo]);
     }
 
     /**
@@ -131,5 +146,18 @@ class IngredientesplatilloController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    protected function calculatorCostProd($id_platillo) {
+        $modelIngredientes = Ingredientesplatillo::find()->where(['id_platillo'=>$id_platillo])->all();
+
+        $costoTotal = 0;
+
+        foreach($modelIngredientes as $item): {            
+            $costoTotal += $item->cantidad_ingrdte * $item->costo_total_ingrdte;
+        }
+    
+        endforeach;
+        return $costoTotal;
     }
 }

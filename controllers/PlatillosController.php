@@ -59,6 +59,8 @@ class PlatillosController extends Controller
     public function actionView($id_platillo)
     {
         $searchModelIng = new IngredientesplatilloSearch();
+        $IngPlatModel = new Ingredientesplatillo();
+
         $dataProviderIng = $searchModelIng->search($this->request->queryParams);
         $dataProviderIng->query->where(['id_platillo' => $id_platillo]);
 
